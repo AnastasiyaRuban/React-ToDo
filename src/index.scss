@@ -19,6 +19,21 @@ ul {
   padding-left: 0;
 }
 
+// a:visited {
+//   color: rgb(230, 204, 216);
+//   text-decoration: none;
+// }
+
+.hidden {
+  opacity: 0;
+  height: 0;
+  width: 0;
+  line-height: 0;
+  overflow: hidden;
+  padding: 0;
+  margin: 0;
+}
+
 .button-reset {
   padding: 0;
   margin: 0;
@@ -42,7 +57,7 @@ ul {
 }
 
 .title {
-  color: antiquewhite;
+  color: rgb(230, 204, 216);
   margin-top: 0;
   text-align: end;
 }
@@ -73,9 +88,11 @@ ul {
     width: 60px;
     background: #822651;
   }
-  &__label {
+  &__label,
+  &__button-upload {
     display: block;
     padding-left: 15px;
+    font-family: inherit;
     // font-family: 'Roboto', sans-serif;
     color: rgba(255, 255, 255, 0.6);
     text-transform: uppercase;
@@ -106,6 +123,17 @@ ul {
   &__button:hover {
     background-color: #822651;
   }
+
+  &__button-upload {
+    display: flex;
+    align-items: center;
+    width: fit-content;
+    cursor: pointer;
+  }
+
+  &__upload-item {
+    color: rgba(255, 255, 255, 0.6);
+  }
 }
 
 .todo-list {
@@ -121,11 +149,6 @@ ul {
   border-radius: 20px;
   color: white;
   background: rgba(255, 255, 255, 0.2);
-
-  &__item {
-    // display: flex;
-    // align-items: center;
-  }
 
   &__buttons {
     position: absolute;
@@ -173,4 +196,37 @@ ul {
   &__description {
     margin: 0;
   }
+}
+
+@media (max-width: 500px) {
+  .app__container {
+    flex-direction: column;
+  }
+}
+
+.item__task-input,
+.item__description-input,
+.date__description-item {
+  border: none;
+  outline: none;
+  background: rgb(230, 204, 216);
+  padding: 10px;
+  border-radius: 30px;
+}
+
+.add-icon {
+  margin-right: 5px;
+}
+
+.active-link {
+  color: rgb(55, 10, 82);
+  font-weight: 600;
+  margin-right: 15px;
+  text-decoration: none;
+}
+
+.link {
+  color: rgb(230, 204, 216);
+  margin-right: 15px;
+  text-decoration: none;
 }
