@@ -6,7 +6,7 @@ import AttachFileIcon from '@mui/icons-material/AttachFile';
 import CheckBoxIcon from '@mui/icons-material/CheckBox';
 import CheckBoxOutlineBlankIcon from '@mui/icons-material/CheckBoxOutlineBlank';
 import { useDispatch } from 'react-redux';
-import { deleteTodo, toggleTodoDone } from '../store/todoSlice';
+import { deleteTodo, toggleTodoDone } from '../../../store/todoSlice';
 import TodoTask from './TodoTask';
 import TodoDescription from './TodoDescription';
 import TodoDate from './TodoDate';

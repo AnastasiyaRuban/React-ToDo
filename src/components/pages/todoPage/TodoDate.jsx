@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { useDispatch } from 'react-redux';
-import { changeTodoDate } from '../store/todoSlice';
+import { changeTodoDate } from '../../../store/todoSlice';
 import CalendarIcon from '@mui/icons-material/CalendarToday';
 import DatePicker from 'react-datepicker';
 import { registerLocale } from 'react-datepicker';

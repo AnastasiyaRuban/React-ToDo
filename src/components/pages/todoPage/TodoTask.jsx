@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { useDispatch } from 'react-redux';
-import { changeTodoTask } from '../store/todoSlice';
+import { changeTodoTask } from '../../../store/todoSlice';
 
 export default function TodoTask({ editMode, value, taskRef, id }) {
   const [taskValue, setTaskValue] = useState(value);

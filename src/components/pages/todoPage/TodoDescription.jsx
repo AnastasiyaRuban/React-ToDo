@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { useDispatch } from 'react-redux';
-import { changeTodoDescription } from '../store/todoSlice';
+import { changeTodoDescription } from '../../../store/todoSlice';
 
 export default function TodoDescription({
   editMode,

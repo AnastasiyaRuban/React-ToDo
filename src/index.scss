@@ -1,8 +1,19 @@
+@import "../node_modules/bootstrap/scss/bootstrap";
 @import url("https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;0,800;0,900;1,400;1,500;1,600;1,700;1,800;1,900&display=swap");
+@import-normalize;
+// @import "./vars.scss";
+// @import "./components/layout.scss";
+// @import "./components/layout/Layout.module.scss";
+
+$base-color-pink: #ce508b;
+$color-tapestry: #9b5475;
+$color-disco: #861a4d;
+$color-carissma: #e77daf;
+$color-kobi: #e799be;
+$color-melanie: #e6ccd8;
 
 body {
   margin: 0;
-  // font-family: 'Inter', sans-serif;
   font-family: "Playfair Display", serif;
   background-color: #ce508b;
 }
@@ -11,37 +22,53 @@ body {
   box-sizing: border-box;
 }
 
-li {
-  list-style-type: none;
-}
-ul {
-  margin: 0;
-  padding-left: 0;
-}
-
-// a:visited {
-//   color: rgb(230, 204, 216);
-//   text-decoration: none;
+// h1,
+// h2,
+// h3,
+// h4,
+// h5,
+// p {
+//   margin: 0;
+//   padding: 0;
 // }
 
-.hidden {
-  opacity: 0;
-  height: 0;
-  width: 0;
-  line-height: 0;
-  overflow: hidden;
-  padding: 0;
-  margin: 0;
+a {
+  text-decoration: none;
 }
 
+// li {
+//   list-style-type: none;
+// }
+// ul {
+//   margin: 0;
+//   padding-left: 0;
+// }
+
+// .hidden {
+//   opacity: 0;
+//   height: 0;
+//   width: 0;
+//   line-height: 0;
+//   overflow: hidden;
+//   padding: 0;
+//   margin: 0;
+// }
+
 .button-reset {
+  // .button-reset {
   padding: 0;
   margin: 0;
   background: none;
   border: none;
   outline: none;
   cursor: pointer;
-  color: inherit;
+  // color: inherit;
+}
+
+#root {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
 }
 
 .app {
@@ -74,7 +101,6 @@ ul {
     position: relative;
     margin-top: 0;
     color: white;
-    // font-family: 'Roboto', sans-serif;
     font-weight: 300;
     font-size: 26px;
     text-transform: uppercase;
@@ -93,7 +119,6 @@ ul {
     display: block;
     padding-left: 15px;
     font-family: inherit;
-    // font-family: 'Roboto', sans-serif;
     color: rgba(255, 255, 255, 0.6);
     text-transform: uppercase;
     font-size: 14px;
@@ -110,7 +135,6 @@ ul {
     border-radius: 20px;
     color: white;
     background: rgba(255, 255, 255, 0.2);
-    // font-family: 'Roboto', sans-serif;
   }
 
   &__button {
@@ -198,12 +222,6 @@ ul {
   }
 }
 
-@media (max-width: 500px) {
-  .app__container {
-    flex-direction: column;
-  }
-}
-
 .item__task-input,
 .item__description-input,
 .date__description-item {
@@ -218,15 +236,8 @@ ul {
   margin-right: 5px;
 }
 
-.active-link {
-  color: rgb(55, 10, 82);
-  font-weight: 600;
-  margin-right: 15px;
-  text-decoration: none;
-}
-
-.link {
-  color: rgb(230, 204, 216);
-  margin-right: 15px;
-  text-decoration: none;
+@media (max-width: 500px) {
+  .app__container {
+    flex-direction: column;
+  }
 }
