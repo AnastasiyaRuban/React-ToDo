@@ -4,11 +4,9 @@ import styles from './SettingsPage.module.scss';
 
 export default function SettingsPage() {
   return (
-    <div>
-      <h2 className=''>Change your theme: </h2>
-      <div>
-        <ColorsTheme styles={styles} />
-      </div>
+    <div className={styles.settings}>
+      <h2>Change your theme: </h2>
+      <ColorsTheme styles={styles} />
     </div>
   );
 }

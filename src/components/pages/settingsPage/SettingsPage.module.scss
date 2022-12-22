@@ -1,5 +1,11 @@
 @use "../../../vars.scss" as *;
 
+.settings {
+    display: flex;
+    align-items: center;
+    gap: 30px;
+}
+
 .root {
     position: relative;
     border-radius: 50%;
@@ -8,9 +14,6 @@
     overflow: hidden;
     width: 24px;
     transition: 0.5s all ease;
-    // input {
-    //     display: none;
-    // }
     &:hover {
         cursor: pointer;
     }
@@ -32,13 +35,13 @@
         left: 7px;
         top: 7px;
         width: 10px;
-        &:hover {
-            background-color: var(--background-color);
-            box-shadow: 10px 0 0 -3.5px var(--background-color), -10px 0 0 -3.5px var(--background-color),
-                0 -10px 0 -3.5px var(--background-color), 0 10px 0 -3.5px var(--background-color),
-                7px -7px 0 -3.5px var(--background-color), 7px 7px 0 -3.5px var(--background-color),
-                -7px 7px 0 -3.5px var(--background-color), -7px -7px 0 -3.5px var(--background-color);
-        }
+        // &:hover {
+        //     background-color: var(--background-color);
+        //     box-shadow: 10px 0 0 -3.5px var(--background-color), -10px 0 0 -3.5px var(--background-color),
+        //         0 -10px 0 -3.5px var(--background-color), 0 10px 0 -3.5px var(--background-color),
+        //         7px -7px 0 -3.5px var(--background-color), 7px 7px 0 -3.5px var(--background-color),
+        //         -7px 7px 0 -3.5px var(--background-color), -7px -7px 0 -3.5px var(--background-color);
+        // }
     }
     &.blue {
         &:before {
@@ -51,9 +54,9 @@
             top: 2px;
             width: 20px;
             z-index: 1;
-            &:hover {
-                background-color: var(--background-color);
-            }
+            //     &:hover {
+            //         background-color: var(--background-color);
+            //     }
         }
         &:after {
             animation-duration: 0.5s;

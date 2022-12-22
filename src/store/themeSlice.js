@@ -1,5 +1,7 @@
 import { createSlice } from '@reduxjs/toolkit';
 
+document.documentElement.dataset.theme = 'pink';
+
 const getTheme = () => {
   const theme = `${window?.localStorage?.getItem('theme')}`;
   if (['pink', 'blue'].includes(theme)) return theme;
@@ -10,9 +12,11 @@ const getTheme = () => {
   return 'blue';
 };
 
+const initialState = getTheme();
+
 export const themeSlice = createSlice({
   name: 'theme',
-  initialState: getTheme(),
+  initialState,
   reducers: {
     set: (state, action) => action.payload,
   },
