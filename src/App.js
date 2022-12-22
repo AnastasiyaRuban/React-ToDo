@@ -8,7 +8,13 @@ import Layout from './components/layout/Layout';
 import Homepage from './components/pages/homePage/Homepage';
 import LoginPage from './components/pages/loginPage/LoginPage';
 import TodoPage from './components/pages/todoPage/TodoPage';
-import { LOGIN_ROUTE, TODO_ROUTE, HOME_ROUTE } from './utils/consts';
+import SettingsPage from './components/pages/settingsPage/SettingsPage';
+import {
+  LOGIN_ROUTE,
+  TODO_ROUTE,
+  HOME_ROUTE,
+  SETTINGS_ROUTE,
+} from './utils/consts';
 import { StyledEngineProvider } from '@mui/material/styles';
 
 function App() {
@@ -27,6 +33,7 @@ function App() {
             <Route index element={<Homepage />} />
             {newUser && <Route path={LOGIN_ROUTE} element={<LoginPage />} />}
             {!newUser && <Route path={TODO_ROUTE} element={<TodoPage />} />}
+            <Route path={SETTINGS_ROUTE} element={<SettingsPage />} />
             <Route path='*' element={<Navigate to='/' replace />} />
           </Route>
         </Routes>

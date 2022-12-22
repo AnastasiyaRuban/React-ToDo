@@ -6,3 +6,13 @@ $color-carissma: #e77daf;
 $color-kobi: #e799be;
 $color-melanie: #e6ccd8;
 $color-shark: #212529;
+
+:root[data-theme="pink"] {
+    --background-color: #ce508b;
+    --text-color: #212529;
+}
+
+:root[data-theme="blue"] {
+    --background-color: #164467;
+    --text-color: #e6ccd8;
+}

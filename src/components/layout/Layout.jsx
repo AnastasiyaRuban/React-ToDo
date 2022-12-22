@@ -1,7 +1,7 @@
 import React from 'react';
 import { NavLink, Outlet } from 'react-router-dom';
-// import Button from '@mui/material/Button';
 import styles from './Layout.module.scss';
+import AccountMenu from './AccountMenu';
 
 export default function Layout({ autorisation, logout }) {
   function setClassLink({ isActive }) {
@@ -11,6 +11,10 @@ export default function Layout({ autorisation, logout }) {
       return `${styles.nav__link}`;
     }
   }
+
+  const handleLogout = () => {
+    logout();
+  };
 
   return (
     <>
@@ -33,14 +37,7 @@ export default function Layout({ autorisation, logout }) {
             Login
           </NavLink>
         ) : (
-          <NavLink to='/login'>
-            <button
-              className={`${styles.nav__link} button-reset`}
-              onClick={logout}
-            >
-              Logout
-            </button>
-          </NavLink>
+          <AccountMenu handleLogout={handleLogout} styles={styles} />
         )}{' '}
       </header>
       <main className='container app'>

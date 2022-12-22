@@ -8,21 +8,6 @@ const todoSlice = createSlice({
   },
   reducers: {
     addTodo(state, action) {
-      // action.payload.preventDefault();
-
-      // const formData = new FormData(action.payload.target);
-      // formData.append('files', action.payload.files);
-      // console.log(action.payload);
-
-      // state.todos.push({
-      //   id: '_' + Math.random().toString(36).substring(2, 9),
-      //   task: formData.get('task'),
-      //   date: DateTime.fromFormat(formData.get('date'), 'dd.MM.yyyy').toISO(),
-      //   description: formData.get('description'),
-      //   done: false,
-      //   files: formData.get('files'),
-      // });
-
       const formData = action.payload.formData;
       state.todos.push({
         id: '_' + Math.random().toString(36).substring(2, 9),

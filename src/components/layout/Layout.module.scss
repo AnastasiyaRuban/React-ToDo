@@ -25,6 +25,7 @@
     font-family: inherit;
     font-size: 20px;
     color: rgb(230, 204, 216);
+    text-transform: capitalize;
 }
 
 .nav__link:not(.nav__link-active):hover {
@@ -39,4 +40,10 @@
 .nav__link-active:hover {
     color: rgb(33, 37, 41);
     font-weight: 600;
+}
+
+.menu__item {
+    display: flex;
+    align-items: center;
+    color: inherit;
 }
