@@ -1,7 +1,7 @@
 import React, { useEffect } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
 import cn from 'classnames';
-import { set } from '../../../store/themeSlice';
+import { set } from '../store/themeSlice';
 
 export default function ColorsTheme({ className, styles }) {
   const theme = useSelector((state) => state.theme);
@@ -21,7 +21,7 @@ export default function ColorsTheme({ className, styles }) {
     <div
       className={cn(
         className,
-        styles.root,
+        styles.theme,
         theme === 'blue' ? styles.blue : styles.pink
       )}
       onClick={handleChange}

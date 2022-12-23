@@ -2,6 +2,7 @@ import React from 'react';
 import { NavLink, Outlet } from 'react-router-dom';
 import styles from './Layout.module.scss';
 import AccountMenu from './AccountMenu';
+import ColorsTheme from '../ColorsTheme';
 
 export default function Layout({ autorisation, logout }) {
   function setClassLink({ isActive }) {
@@ -32,6 +33,7 @@ export default function Layout({ autorisation, logout }) {
             </NavLink>
           )}
         </nav>
+        <ColorsTheme styles={styles} />
         {autorisation ? (
           <NavLink to='/login' className={setClassLink}>
             Login

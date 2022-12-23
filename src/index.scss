@@ -29,15 +29,15 @@ body {
   box-sizing: border-box;
 }
 
-// h1,
-// h2,
-// h3,
-// h4,
-// h5,
-// p {
-//   margin: 0;
-//   padding: 0;
-// }
+h1,
+h2,
+h3,
+h4,
+h5,
+p {
+  margin: 0;
+  padding: 0;
+}
 
 a {
   text-decoration: none;
@@ -91,7 +91,7 @@ a {
 }
 
 .title {
-  color: rgb(230, 204, 216);
+  // color: rgb(230, 204, 216);
   margin-top: 0;
   text-align: end;
 }
@@ -107,7 +107,7 @@ a {
   &__title {
     position: relative;
     margin-top: 0;
-    color: white;
+    // color: white;
     font-weight: 300;
     font-size: 26px;
     text-transform: uppercase;
@@ -140,14 +140,14 @@ a {
     border-width: 0;
     line-height: 40px;
     border-radius: 20px;
-    color: white;
+    // color: white;
     background: rgba(255, 255, 255, 0.2);
   }
 
   &__button {
     margin-top: 30px;
     background-color: rgba(255, 125, 186, 0.6);
-    color: white;
+    // color: white;
     font-size: 14px;
   }
 
