@@ -17,8 +17,6 @@ export default function Form({ styles }) {
     e.preventDefault();
     const formData = new FormData(e.target);
     formData.append('files', files.toString());
-    console.log(files);
-    console.log(formData.get('files'));
     dispatch(addTodo({ formData }));
     setValueTask('');
     setValueDate(new Date());

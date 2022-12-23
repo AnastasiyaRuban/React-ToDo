@@ -7,7 +7,7 @@ import styles from './TodoPage.module.scss';
 export default function TodoPage() {
   const todoList = useSelector((state) => state.todos.todos);
   return (
-    <div>
+    <div className={styles.app}>
       <Form styles={styles} />
       {todoList.length > 0 && <TodoList styles={styles} />}
     </div>

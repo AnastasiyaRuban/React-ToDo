@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import { useDispatch } from 'react-redux';
 import { changeTodoTask } from '../../../store/todoSlice';
 
-export default function TodoTask({ editMode, value, taskRef, id }) {
+export default function TodoTask({ editMode, value, taskRef, id, styles }) {
   const [taskValue, setTaskValue] = useState(value);
   const dispatch = useDispatch();
 
@@ -15,13 +15,13 @@ export default function TodoTask({ editMode, value, taskRef, id }) {
     <>
       {editMode ? (
         <input
-          className='item__task-input'
+          className={styles['item__task-input']}
           value={taskValue}
           ref={taskRef}
           onChange={handleChange}
         />
       ) : (
-        <p className='item__task'>{value}</p>
+        <p className={styles.item__task}>{value}</p>
       )}
     </>
   );

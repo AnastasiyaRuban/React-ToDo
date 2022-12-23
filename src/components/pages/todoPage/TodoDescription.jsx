@@ -7,6 +7,7 @@ export default function TodoDescription({
   value,
   id,
   descriptionRef,
+  styles,
 }) {
   const [descriptionValue, setDescriptionValue] = useState(value);
   const dispatch = useDispatch();
@@ -19,17 +20,17 @@ export default function TodoDescription({
   return (
     <>
       {editMode ? (
-        <div className='item__description'>
+        <div className={styles.item__description}>
           <span>Description:</span>{' '}
           <input
-            className='item__description-input'
+            className={styles['item__description-input']}
             value={descriptionValue}
             onChange={handleChange}
             ref={descriptionRef}
           />
         </div>
       ) : (
-        <p className='item__description'>
+        <p className={styles.item__description}>
           <span>Description:</span> {value}
         </p>
       )}

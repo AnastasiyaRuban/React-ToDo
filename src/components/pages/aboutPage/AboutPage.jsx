@@ -11,6 +11,9 @@ export default function AboutPage() {
           Add downloading data from the server
         </li>
         <li className={styles.about__item}>Add ability to upload files</li>
+        <li className={styles.about__item}>
+          Add indication of an overdue case
+        </li>
       </ul>
     </div>
   );

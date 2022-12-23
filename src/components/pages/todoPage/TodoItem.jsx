@@ -11,7 +11,14 @@ import TodoTask from './TodoTask';
 import TodoDescription from './TodoDescription';
 import TodoDate from './TodoDate';
 
-export default function TodoItem({ id, task, description, date, done }) {
+export default function TodoItem({
+  id,
+  task,
+  description,
+  date,
+  done,
+  styles,
+}) {
   const [editMode, setEditMode] = useState(false);
   const taskRef = useRef(null);
   const descriptionRef = useRef(null);
@@ -47,39 +54,51 @@ export default function TodoItem({ id, task, description, date, done }) {
   };
 
   return (
-    <li className='todo-item' id={id}>
-      <div className='todo-item__item item'>
+    <li className={styles['todo-item']} id={id}>
+      <div className={styles.item}>
         <IconButton
-          className='item__checkbox'
+          className={styles.item__checkbox}
           aria-label='check done'
           onClick={() => dispatch(toggleTodoDone({ id }))}
-          sx={{ color: '#fff', fontSize: 15 }}
         >
           {done === true ? <CheckBoxIcon /> : <CheckBoxOutlineBlankIcon />}
         </IconButton>
 
-        <TodoTask editMode={editMode} value={task} taskRef={taskRef} id={id} />
+        <TodoTask
+          editMode={editMode}
+          value={task}
+          taskRef={taskRef}
+          id={id}
+          styles={styles}
+        />
         <TodoDescription
           editMode={editMode}
           descriptionRef={descriptionRef}
           value={description}
           id={id}
+          styles={styles}
         />
       </div>
 
-      <TodoDate value={date} editMode={editMode} id={id} dateRef={dateRef} />
-      <div className='todo-item__buttons'>
+      <TodoDate
+        value={date}
+        editMode={editMode}
+        id={id}
+        dateRef={dateRef}
+        styles={styles}
+      />
+      <div className={styles['todo-item__buttons']}>
         <IconButton aria-label='add files'>
-          <AttachFileIcon sx={{ fontSize: 20 }} />
+          <AttachFileIcon className={styles.item__button} />
         </IconButton>
         <IconButton aria-label='edit' ref={editButtonRef} onClick={handlerEdit}>
-          <EditIcon sx={{ fontSize: 20 }} />
+          <EditIcon className={styles.item__button} />
         </IconButton>
         <IconButton
           aria-label='delete'
           onClick={() => dispatch(deleteTodo({ id }))}
         >
-          <DeleteIcon sx={{ fontSize: 20 }} />
+          <DeleteIcon className={styles.item__button} />
         </IconButton>
       </div>
     </li>
