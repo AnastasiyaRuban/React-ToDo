@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { useDispatch } from 'react-redux';
 import { changeTodoDescription } from '../../../store/todoSlice';
 
@@ -17,22 +17,35 @@ export default function TodoDescription({
     dispatch(changeTodoDescription({ id, description: e.target.value }));
   };
 
+  // useEffect(() => {
+  //   if (descriptionRef) {
+  //     descriptionRef.current.setAttribute(
+  //       'style',
+  //       'height:' +
+  //         descriptionRef.current.scrollHeight +
+  //         'px;overflow-y:hidden;'
+  //     );
+
+  //     descriptionRef.current.addEventListener('input', OnInput, false);
+  //   }
+  // }, [descriptionRef]);
+
+  // function OnInput() {
+  //   this.style.height = 'auto';
+  //   this.style.height = this.scrollHeight + 'px';
+  // }
+
   return (
     <>
       {editMode ? (
-        <div className={styles.item__description}>
-          <span>Description:</span>{' '}
-          <input
-            className={styles['item__description-input']}
-            value={descriptionValue}
-            onChange={handleChange}
-            ref={descriptionRef}
-          />
-        </div>
+        <textarea
+          className={styles['item__description-input']}
+          value={descriptionValue}
+          onChange={handleChange}
+          ref={descriptionRef}
+        />
       ) : (
-        <p className={styles.item__description}>
-          <span>Description:</span> {value}
-        </p>
+        <p className={styles.item__description}>{value}</p>
       )}
     </>
   );

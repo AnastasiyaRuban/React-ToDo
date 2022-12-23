@@ -1,0 +1,243 @@
+@import "../node_modules/bootstrap/scss/bootstrap";
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;0,800;0,900;1,400;1,500;1,600;1,700;1,800;1,900&display=swap");
+@import-normalize;
+// @import "./vars.scss";
+// @import "./components/layout.scss";
+@import "./components/layout/Layout.module.scss";
+
+$base-color-pink: #ce508b;
+$color-tapestry: #9b5475;
+$color-disco: #861a4d;
+$color-carissma: #e77daf;
+$color-kobi: #e799be;
+$color-melanie: #e6ccd8;
+
+body {
+  margin: 0;
+  font-family: "Playfair Display", serif;
+  background-color: #ce508b;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+// h1,
+// h2,
+// h3,
+// h4,
+// h5,
+// p {
+//   margin: 0;
+//   padding: 0;
+// }
+
+a {
+  text-decoration: none;
+}
+
+// li {
+//   list-style-type: none;
+// }
+// ul {
+//   margin: 0;
+//   padding-left: 0;
+// }
+
+// .hidden {
+//   opacity: 0;
+//   height: 0;
+//   width: 0;
+//   line-height: 0;
+//   overflow: hidden;
+//   padding: 0;
+//   margin: 0;
+// }
+
+button {
+  // .button-reset {
+  padding: 0;
+  margin: 0;
+  background: none;
+  border: none;
+  outline: none;
+  cursor: pointer;
+  // color: inherit;
+}
+
+#root {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+}
+
+.app {
+  padding: 20px 50px;
+  width: 100%;
+  max-width: 1200px;
+
+  &__container {
+    display: flex;
+    gap: 30px;
+    align-items: flex-start;
+  }
+}
+
+.title {
+  color: rgb(230, 204, 216);
+  margin-top: 0;
+  text-align: end;
+}
+
+.form {
+  position: relative;
+  min-width: 300px;
+  padding: 20px;
+  background-image: url("../assets/photo-roses.jpg");
+  background-size: cover;
+  border-radius: 30px;
+
+  &__title {
+    position: relative;
+    margin-top: 0;
+    color: white;
+    font-weight: 300;
+    font-size: 26px;
+    text-transform: uppercase;
+  }
+  &__title:after {
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: -6px;
+    height: 2px;
+    width: 60px;
+    background: #822651;
+  }
+  &__label,
+  &__button-upload {
+    display: block;
+    padding-left: 15px;
+    font-family: inherit;
+    color: rgba(255, 255, 255, 0.6);
+    text-transform: uppercase;
+    font-size: 14px;
+  }
+  &__input,
+  &__button {
+    outline: none;
+    display: block;
+    width: 100%;
+    padding: 0 15px;
+    margin: 10px 0 15px;
+    border-width: 0;
+    line-height: 40px;
+    border-radius: 20px;
+    color: white;
+    background: rgba(255, 255, 255, 0.2);
+  }
+
+  &__button {
+    margin-top: 30px;
+    background-color: rgba(255, 125, 186, 0.6);
+    color: white;
+    font-size: 14px;
+  }
+
+  &__button:hover {
+    background-color: #822651;
+  }
+
+  &__button-upload {
+    display: flex;
+    align-items: center;
+    width: fit-content;
+    cursor: pointer;
+  }
+
+  &__upload-item {
+    color: rgba(255, 255, 255, 0.6);
+  }
+}
+
+.todo-list {
+  width: 100%;
+}
+
+.todo-item {
+  position: relative;
+  width: 100%;
+  padding: 15px 15px;
+  margin-bottom: 25px;
+  line-height: 40px;
+  border-radius: 20px;
+  color: white;
+  background: rgba(255, 255, 255, 0.2);
+
+  &__buttons {
+    position: absolute;
+    right: 15px;
+    top: 15px;
+  }
+}
+
+.item {
+  display: grid;
+  grid-template-areas:
+    " checkbox task"
+    "description description";
+  justify-content: start;
+  align-items: center;
+  &__checkbox {
+    margin-right: 10px;
+    grid-area: checkbox;
+  }
+
+  &__task {
+    margin: 0;
+    grid-area: task;
+  }
+
+  &__description {
+    margin: 0;
+    grid-area: description;
+    font-size: 13px;
+  }
+
+  &__description span {
+    font-style: italic;
+  }
+}
+
+.date {
+  display: flex;
+  align-items: center;
+
+  &__icon {
+    margin-right: 5px;
+  }
+
+  &__description {
+    margin: 0;
+  }
+}
+
+.item__task-input,
+.item__description-input,
+.date__description-item {
+  border: none;
+  outline: none;
+  background: rgb(230, 204, 216);
+  padding: 10px;
+  border-radius: 30px;
+}
+
+.add-icon {
+  margin-right: 5px;
+}
+
+@media (max-width: 500px) {
+  .app__container {
+    flex-direction: column;
+  }
+}

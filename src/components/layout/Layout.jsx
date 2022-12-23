@@ -25,15 +25,19 @@ export default function Layout({ autorisation, logout }) {
     burgerRef.current.classList.toggle(styles['burger-active']);
   };
 
-  document.body.addEventListener('click', (e) => {
-    if (
-      !e.target.className.includes('nav') &&
-      !e.target.className.includes('burger')
-    ) {
-      navRef.current.classList.remove(styles.active);
-      burgerRef.current.classList.remove(styles['burger-active']);
-    }
-  });
+  // document.body.addEventListener('click', (e) => {
+  //   if (
+  //     !e.target.className.includes('nav') &&
+  //     !e.target.className.includes('burger')
+  //   ) {
+  //     const nav = navRef.current;
+  //     const burger = burgerRef.current;
+  //     if (nav && burger) {
+  //       navRef.current.classList.remove(styles.active);
+  //       burgerRef.current.classList.remove(styles['burger-active']);
+  //     }
+  //   }
+  // });
 
   return (
     <>

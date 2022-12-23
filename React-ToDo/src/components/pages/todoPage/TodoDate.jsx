@@ -8,7 +8,7 @@ import ru from 'date-fns/locale/ru';
 import { DateTime } from 'luxon';
 registerLocale('ru', ru);
 
-export default function TodoDate({ editMode, value, dateRef, id, styles }) {
+export default function TodoDate({ editMode, value, dateRef, id }) {
   const [dateValue, setDateValue] = useState(value);
   const dispatch = useDispatch();
 
@@ -23,8 +23,11 @@ export default function TodoDate({ editMode, value, dateRef, id, styles }) {
   };
 
   return (
-    <>
-      <CalendarIcon className={styles.date__icon} />
+    <div className='todo-item__date date' ref={dateRef}>
+      <CalendarIcon
+        className='date__icon'
+        sx={{ color: '#822651', fontSize: 15 }}
+      />
 
       {editMode ? (
         <DatePicker
@@ -35,17 +38,16 @@ export default function TodoDate({ editMode, value, dateRef, id, styles }) {
           minDate={new Date()}
           showDisabledMonthNavigation
           dateFormat='dd.MM.yyyy'
-          className={`${styles['date__description-item']} ${styles.date__description}`}
+          className='date__description-item'
           locale='ru'
-          ref={dateRef}
         />
       ) : (
-        <p className={styles.date__description}>
+        <p className='date__description'>
           {DateTime.fromISO(dateValue)
             .setLocale('ru')
             .toLocaleString(DateTime.DATE_FULL)}
         </p>
       )}
-    </>
+    </div>
   );
 }

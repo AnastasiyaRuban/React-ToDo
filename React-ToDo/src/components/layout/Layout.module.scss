@@ -1,0 +1,40 @@
+.header,
+.footer {
+    position: fixed;
+    padding-top: 15px;
+    padding-bottom: 15px;
+}
+
+.header {
+    top: 0;
+}
+
+.footer {
+    bottom: 0;
+    text-align: center;
+    width: 100vw;
+}
+
+.nav {
+    max-width: 600px;
+}
+
+.nav__link {
+    font-family: inherit;
+    font-size: 20px;
+    color: rgb(230, 204, 216);
+}
+
+.nav__link:not(.nav__link-active):hover {
+    color: rgb(231, 153, 190);
+}
+
+.nav__link:not(:last-child) {
+    margin-right: 45px;
+}
+
+.nav__link-active,
+.nav__link-active:hover {
+    color: rgb(33, 37, 41);
+    font-weight: 600;
+}

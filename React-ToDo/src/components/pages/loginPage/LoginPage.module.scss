@@ -1,0 +1,42 @@
+@use "../../../vars.scss" as *;
+
+.app-login {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+}
+
+.type-sign {
+    text-align: center;
+    margin-bottom: 15px;
+    &__button {
+        color: $color-melanie;
+        border: 1px solid $color-melanie;
+        border-radius: 30px;
+        transition: all 0.3s ease-in-out;
+    }
+
+    &__button:not(:last-child) {
+        margin-right: 20px;
+    }
+    &__button.active {
+        background-color: $color-disco;
+    }
+    &__button:not(.active):hover {
+        color: $color-disco;
+        border-color: $color-disco;
+    }
+}
+
+.form-login {
+    max-width: 500px;
+}
+
+.password-recovery {
+    margin: 0 auto;
+    border: none;
+    background-color: transparent;
+    font-size: 12px;
+    color: $color-melanie;
+}

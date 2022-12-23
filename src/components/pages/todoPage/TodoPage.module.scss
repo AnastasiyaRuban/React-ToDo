@@ -8,7 +8,7 @@
     min-width: 300px;
     max-width: 20%;
     padding: 20px;
-    background-image: url("../../../../assets/pions2.jpg");
+    background-image: var(--background-form);
     background-size: cover;
     border-radius: 30px;
 
@@ -92,65 +92,76 @@
 
 .todo-list {
     width: 100%;
+    padding-left: 0;
 }
 
 .todo-item {
     position: relative;
     max-width: 1100px;
     padding: 15px 15px;
+    display: grid;
+    align-items: start;
+    grid-template-columns: 30px 70% auto;
+    column-gap: 5px;
+    row-gap: 10px;
+    grid-template-areas:
+        "checkbox task buttons"
+        "descriptionIcon description ."
+        "dateIcon date .";
     margin-bottom: 25px;
     line-height: 40px;
     border-radius: 20px;
     background: rgba(255, 255, 255, 0.2);
     list-style-type: none;
-
-    &__buttons {
-        position: absolute;
-        right: 15px;
-        top: 15px;
-    }
 }
 
 .item {
-    display: grid;
-
-    grid-template-areas:
-        " checkbox task"
-        "description description";
-    justify-content: start;
-    align-items: center;
     &__checkbox {
-        margin-right: 10px;
+        padding: 0;
         grid-area: checkbox;
     }
 
     &__task {
         margin: 0;
+        padding-top: 2px;
         grid-area: task;
+        line-height: 20px;
     }
 
     &__description {
         margin: 0;
+        padding-top: 2px;
         grid-area: description;
         font-size: 13px;
+        line-height: 1;
     }
 
-    &__description span {
-        font-style: italic;
+    &__info-icon {
+        grid-area: descriptionIcon;
+        justify-self: center;
+        font-size: 20px;
+    }
+
+    &__buttons {
+        grid-area: buttons;
+        justify-self: end;
     }
 }
 
 .date {
-    display: flex;
-    align-items: center;
-
     &__icon {
-        margin-right: 5px;
-        transform: translateY(2px);
+        grid-area: dateIcon;
+        justify-self: center;
+        align-self: center;
+        color: var(--text-color);
+        font-size: 20px;
     }
 
     &__description {
+        padding-top: 2px;
         margin: 0;
+        grid-area: date;
+        line-height: 1;
     }
 }
 
@@ -160,9 +171,11 @@
     margin: 0;
     border: none;
     outline: none;
-    background: rgb(230, 204, 216);
-    padding: 10px;
+    background: transparent;
+    // padding: 10px;
     border-radius: 30px;
+    line-height: 1;
+    color: var(--text-color);
 }
 
 .add-icon {
@@ -191,4 +204,62 @@
 .item__button {
     font-size: 20px;
     color: var(--text-color);
+}
+
+@media (max-width: 1024px) {
+    .app {
+        flex-direction: column;
+    }
+    .form {
+        max-width: 100%;
+        min-width: 200px;
+    }
+
+    .todo-item {
+        grid-template-columns: 30px auto;
+        column-gap: 5px;
+        row-gap: 10px;
+        grid-template-areas:
+            "checkbox task "
+            "descriptionIcon description "
+            "dateIcon date "
+            " . buttons";
+    }
+}
+
+@media (min-device-width: 768px) and (max-device-width: 1024px) {
+    .form {
+        display: grid;
+        grid-template-areas:
+            ". title"
+            "task description"
+            "date upload"
+            "button button";
+        column-gap: 15px;
+
+        &__title {
+            grid-area: title;
+        }
+
+        &__label[for="task"],
+        &__input[name="task"] {
+            grid-area: task;
+        }
+        &__label[for="description"],
+        &__input[name="description"] {
+            grid-area: description;
+        }
+        &__label[for="date"] {
+            grid-area: date;
+        }
+
+        &__button-upload,
+        input[type="file"] {
+            grid-area: upload;
+        }
+
+        &__button {
+            grid-area: button;
+        }
+    }
 }

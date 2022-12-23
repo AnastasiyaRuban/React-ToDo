@@ -1,0 +1,65 @@
+{
+  "name": "counter",
+  "version": "0.1.0",
+  "private": true,
+  "dependencies": {
+    "@emotion/styled": "^11.10.5",
+    "@reduxjs/toolkit": "^1.9.1",
+    "@testing-library/jest-dom": "^5.16.4",
+    "@testing-library/react": "^13.3.0",
+    "@testing-library/user-event": "^13.5.0",
+    "bootstrap": "^5.2.3",
+    "firebase": "^9.15.0",
+    "node-sass": "^7.0.3",
+    "node-scss": "^7.0.3",
+    "react": "^18.1.0",
+    "react-dom": "^18.1.0",
+    "react-firebase-hooks": "^5.1.1",
+    "react-redux": "^8.0.5",
+    "react-router-dom": "^6.4.5",
+    "react-scripts": "5.0.1",
+    "redux": "^4.2.0",
+    "sass": "^1.52.3",
+    "web-vitals": "^2.1.4"
+  },
+  "scripts": {
+    "start": "react-scripts start",
+    "build": "react-scripts build",
+    "test": "react-scripts test",
+    "eject": "react-scripts eject"
+  },
+  "eslintConfig": {
+    "extends": [
+      "react-app",
+      "react-app/jest"
+    ]
+  },
+  "browserslist": {
+    "production": [
+      ">0.2%",
+      "not dead",
+      "not op_mini all"
+    ],
+    "development": [
+      "last 1 chrome version",
+      "last 1 firefox version",
+      "last 1 safari version"
+    ]
+  },
+  "devDependencies": {
+    "@date-io/moment": "^2.16.1",
+    "@emotion/react": "^11.10.5",
+    "@mui/icons-material": "^5.10.15",
+    "@mui/material": "^5.10.15",
+    "@mui/styled-engine": "^5.10.14",
+    "@mui/styled-engine-sc": "^5.10.14",
+    "@mui/x-date-pickers": "^5.0.9",
+    "dateformat": "^5.0.3",
+    "luxon": "^3.1.1",
+    "moment": "^2.29.4",
+    "rc-calendar": "^9.15.11",
+    "react-datepicker": "^4.8.0",
+    "react-hook-form": "^7.39.4",
+    "styled-components": "^5.3.6"
+  }
+}

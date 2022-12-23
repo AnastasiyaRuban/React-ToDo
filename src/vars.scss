@@ -9,11 +9,12 @@ $color-shark: #212529;
 
 :root[data-theme="pink"] {
     --background-color: #e2c1c0;
-
+    --background-form: url("../assets/pions.jpg");
     --text-color: #93413e;
 }
 
 :root[data-theme="blue"] {
     --background-color: #164467;
     --text-color: #d0a670;
+    --background-form: url("../assets/blue.jpg");
 }
