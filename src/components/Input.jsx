@@ -1,13 +1,21 @@
 import React from 'react';
 
-export default function Input({ label, name, type, value, onChange }) {
+export default function Input({
+  label,
+  name,
+  type,
+  value,
+  onChange,
+  inputClass,
+  labelClass,
+}) {
   return (
     <>
-      <label className='form__label' htmlFor={name}>
+      <label className={labelClass} htmlFor={name}>
         {label}
       </label>
       <input
-        className='form__input'
+        className={inputClass}
         value={value}
         type={type}
         id={name}

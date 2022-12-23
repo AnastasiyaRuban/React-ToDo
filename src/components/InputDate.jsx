@@ -4,10 +4,17 @@ import { registerLocale } from 'react-datepicker';
 import ru from 'date-fns/locale/ru';
 registerLocale('ru', ru);
 
-export default function InputDate({ label, name, value, onChange }) {
+export default function InputDate({
+  label,
+  name,
+  value,
+  onChange,
+  inputClass,
+  labelClass,
+}) {
   return (
     <>
-      <label className='form__label' htmlFor={name}>
+      <label className={labelClass} htmlFor={name}>
         {label}
       </label>
       <DatePicker
@@ -22,7 +29,7 @@ export default function InputDate({ label, name, value, onChange }) {
         minDate={new Date()}
         showDisabledMonthNavigation
         dateFormat='dd.MM.yyyy'
-        className='form__input'
+        className={inputClass}
         locale='ru'
       />
     </>

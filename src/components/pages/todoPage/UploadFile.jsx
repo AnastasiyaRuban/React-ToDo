@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import { useRef } from 'react';
 import AddCircleOutlineIcon from '@mui/icons-material/AddCircleOutline';
 
-export default function UploadFile({ onAdd, files }) {
+export default function UploadFile({ onAdd, files, styles }) {
   const [selectedFile, setSelectedFile] = useState([]);
   const filePicker = useRef(null);
 
@@ -10,15 +10,7 @@ export default function UploadFile({ onAdd, files }) {
     setSelectedFile([...selectedFile, e.target.files]);
     onAdd(e.target.files[0]);
     onAdd(e.target.files[0]);
-    console.log(e.target.files[0]);
   };
-
-  // const handleUpload = async () => {
-  //   if (!selectedFile) {
-  //     alert('Please, select a file');
-  //     return;
-  //   }
-  // };
 
   const handleClick = () => {
     filePicker.current.click();
@@ -26,39 +18,29 @@ export default function UploadFile({ onAdd, files }) {
 
   return (
     <>
-      <span className='form__button-upload' onClick={handleClick}>
+      <span className={styles['form__button-upload']} onClick={handleClick}>
         <AddCircleOutlineIcon
-          className='add-icon'
-          sx={{ color: 'rgba(255, 255, 255, 0.2)', fontSize: 20 }}
+          className={styles['add-icon']}
         ></AddCircleOutlineIcon>
         Upload files
       </span>
       <input
-        className='hidden'
+        className={styles.hidden}
         type='file'
         multiple
         onChange={handleChange}
         ref={filePicker}
       />
 
-      {/* <button onClick={handleUpload}>Upload now!</button> */}
-
-      {files && (
-        <ul className='form__upload-list'>
+      {files.length > 0 && (
+        <ul className={styles['form__upload-list']}>
           {files.map((file, index) => (
-            <li className='form__upload-item' key={index + 1}>
+            <li className={styles['form__upload-item']} key={index + 1}>
               {index + 1}. {file.name}
             </li>
           ))}
         </ul>
       )}
-
-      {/* {uploaded && (
-        <div className=''>
-          <h2>{uploaded.fileName}</h2>
-          <img src={uploaded.filePath} alt='' width='200' />
-        </div>
-      )} */}
     </>
   );
 }

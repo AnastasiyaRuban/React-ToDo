@@ -1,4 +1,4 @@
-import React, { useRef, useState } from 'react';
+import React, { useRef } from 'react';
 import { NavLink, Outlet } from 'react-router-dom';
 import styles from './Layout.module.scss';
 import AccountMenu from './AccountMenu';
@@ -25,7 +25,15 @@ export default function Layout({ autorisation, logout }) {
     burgerRef.current.classList.toggle(styles['burger-active']);
   };
 
-  const handleLinkClick = () => {};
+  document.body.addEventListener('click', (e) => {
+    if (
+      !e.target.className.includes('nav') &&
+      !e.target.className.includes('burger')
+    ) {
+      navRef.current.classList.remove(styles.active);
+      burgerRef.current.classList.remove(styles['burger-active']);
+    }
+  });
 
   return (
     <>
@@ -59,7 +67,7 @@ export default function Layout({ autorisation, logout }) {
           <AccountMenu handleLogout={handleLogout} styles={styles} />
         )}{' '}
       </header>
-      <main className='container app'>
+      <main className={styles.app}>
         <Outlet />
       </main>
       <footer className={`container ${styles.footer}`}>Ruban</footer>

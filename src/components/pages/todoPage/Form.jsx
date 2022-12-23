@@ -6,7 +6,7 @@ import Input from '../../Input';
 import InputDate from '../../InputDate';
 import UploadFile from './UploadFile';
 
-export default function Form() {
+export default function Form({ styles }) {
   const dispatch = useDispatch();
   const [valueTask, setValueTask] = useState('');
   const [valueDate, setValueDate] = useState(new Date());
@@ -31,20 +31,24 @@ export default function Form() {
   };
 
   return (
-    <form className='form' onSubmit={(e) => addTask(e)}>
-      <h3 className='form__title'>Create task</h3>
+    <form className={styles.form} onSubmit={(e) => addTask(e)}>
+      <h3 className={styles.form__title}>Create task</h3>
       <Input
         label='Task'
         name='task'
         type='text'
         value={valueTask}
         onChange={setValueTask}
+        inputClass={styles.form__input}
+        labelClass={styles.form__label}
       />
       <InputDate
         label='Target date'
         name='date'
         value={valueDate}
         onChange={setValueDate}
+        inputClass={styles.form__input}
+        labelClass={styles.form__label}
       />
 
       <Input
@@ -53,10 +57,12 @@ export default function Form() {
         type='description'
         value={valueDescription}
         onChange={setValueDescription}
+        inputClass={styles.form__input}
+        labelClass={styles.form__label}
       />
 
-      <UploadFile files={files} onAdd={addFiles} />
-      <button className='form__button button-reset' type='submit'>
+      <UploadFile files={files} onAdd={addFiles} styles={styles} />
+      <button className={`${styles.form__button} button-reset`} type='submit'>
         Add Task
       </button>
     </form>
