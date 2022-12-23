@@ -14,8 +14,10 @@ import {
   TODO_ROUTE,
   HOME_ROUTE,
   SETTINGS_ROUTE,
+  ABOUT_ROUTE,
 } from './utils/consts';
 import { StyledEngineProvider } from '@mui/material/styles';
+import AboutPage from './components/pages/aboutPage/AboutPage';
 
 function App() {
   const [newUser, setNewUser] = useState(false);
@@ -31,6 +33,7 @@ function App() {
             element={<Layout autorisation={newUser} logout={handleLogout} />}
           >
             <Route index element={<Homepage />} />
+            <Route path={ABOUT_ROUTE} element={<AboutPage />} />
             {newUser && <Route path={LOGIN_ROUTE} element={<LoginPage />} />}
             {!newUser && <Route path={TODO_ROUTE} element={<TodoPage />} />}
             <Route path={SETTINGS_ROUTE} element={<SettingsPage />} />

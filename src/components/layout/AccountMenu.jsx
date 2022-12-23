@@ -24,7 +24,13 @@ export default function AccountMenu({ handleLogout, styles }) {
 
   return (
     <>
-      <Box sx={{ display: 'flex', alignItems: 'center', textAlign: 'center' }}>
+      <Box
+        sx={{
+          display: 'flex',
+          alignItems: 'center',
+          textAlign: 'center',
+        }}
+      >
         <Tooltip title='Account settings'>
           <IconButton
             onClick={handleClick}
@@ -34,7 +40,14 @@ export default function AccountMenu({ handleLogout, styles }) {
             aria-haspopup='true'
             aria-expanded={open ? 'true' : undefined}
           >
-            <Avatar sx={{ width: 32, height: 32, fontFamily: 'inherit' }}>
+            <Avatar
+              className={styles.avatar}
+              sx={{
+                width: 32,
+                height: 32,
+                fontFamily: 'inherit',
+              }}
+            >
               A
             </Avatar>
           </IconButton>

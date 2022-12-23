@@ -1,10 +1,13 @@
-import React from 'react';
+import React, { useRef, useState } from 'react';
 import { NavLink, Outlet } from 'react-router-dom';
 import styles from './Layout.module.scss';
 import AccountMenu from './AccountMenu';
 import ColorsTheme from '../ColorsTheme';
 
 export default function Layout({ autorisation, logout }) {
+  const navRef = useRef(null);
+  const burgerRef = useRef(null);
+
   function setClassLink({ isActive }) {
     if (isActive) {
       return `${styles.nav__link} ${styles['nav__link-active']}`;
@@ -17,18 +20,32 @@ export default function Layout({ autorisation, logout }) {
     logout();
   };
 
+  const handleClick = () => {
+    navRef.current.classList.toggle(styles.active);
+    burgerRef.current.classList.toggle(styles['burger-active']);
+  };
+
+  const handleLinkClick = () => {};
+
   return (
     <>
       <header className={`container ${styles.header}`}>
-        <nav className='nav'>
-          <NavLink to='/' className={setClassLink}>
+        <button
+          className={`button-reset ${styles.burger}`}
+          ref={burgerRef}
+          onClick={handleClick}
+        >
+          <span className={styles.burger__line}></span>
+        </button>
+        <nav className={styles.nav} ref={navRef}>
+          <NavLink to='/' className={setClassLink} onClick={handleClick}>
             Home
           </NavLink>
-          <NavLink to='/about' className={setClassLink}>
+          <NavLink to='/about' className={setClassLink} onClick={handleClick}>
             About Project
           </NavLink>
           {!autorisation && (
-            <NavLink to='/todos' className={setClassLink}>
+            <NavLink to='/todos' className={setClassLink} onClick={handleClick}>
               My Todos
             </NavLink>
           )}
