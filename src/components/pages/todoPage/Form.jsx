@@ -39,6 +39,7 @@ export default function Form({ styles }) {
         onChange={setValueTask}
         inputClass={styles.form__input}
         labelClass={styles.form__label}
+        groupClass={styles['form__task-group']}
       />
       <InputDate
         label='Target date'
@@ -47,6 +48,7 @@ export default function Form({ styles }) {
         onChange={setValueDate}
         inputClass={styles.form__input}
         labelClass={styles.form__label}
+        groupClass={styles['form__date-group']}
       />
 
       <Input
@@ -57,6 +59,7 @@ export default function Form({ styles }) {
         onChange={setValueDescription}
         inputClass={styles.form__input}
         labelClass={styles.form__label}
+        groupClass={styles['form__description-group']}
       />
 
       <UploadFile files={files} onAdd={addFiles} styles={styles} />

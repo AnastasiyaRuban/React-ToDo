@@ -235,31 +235,50 @@
             "task description"
             "date upload"
             "button button";
+        grid-template-columns: repeat(2, 1fr);
         column-gap: 15px;
+        row-gap: 10px;
 
         &__title {
             grid-area: title;
+            margin-bottom: 0;
+            font-size: 24px;
+        }
+        &__input {
+            margin-bottom: 0;
         }
 
-        &__label[for="task"],
-        &__input[name="task"] {
+        &__task-group {
             grid-area: task;
         }
-        &__label[for="description"],
-        &__input[name="description"] {
+        &__description-group {
             grid-area: description;
         }
-        &__label[for="date"] {
+        &__date-group {
             grid-area: date;
         }
 
-        &__button-upload,
-        input[type="file"] {
+        &__upload-group {
             grid-area: upload;
+            align-self: end;
+            display: flex;
+            align-items: flex-start;
+            justify-content: space-between;
+            line-height: 40px;
         }
 
         &__button {
             grid-area: button;
+            margin-top: 10px;
+            margin-bottom: 0;
+            align-self: end;
+            max-width: calc(50% - 5px);
+        }
+        &__button-upload {
+            margin-bottom: 0;
+        }
+        &__upload-list {
+            margin-bottom: 0;
         }
     }
 }

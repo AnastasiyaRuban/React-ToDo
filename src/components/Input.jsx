@@ -8,9 +8,10 @@ export default function Input({
   onChange,
   inputClass,
   labelClass,
+  groupClass,
 }) {
   return (
-    <>
+    <div className={groupClass}>
       <label className={labelClass} htmlFor={name}>
         {label}
       </label>
@@ -22,6 +23,6 @@ export default function Input({
         name={name}
         onChange={(e) => onChange(e.target.value)}
       />
-    </>
+    </div>
   );
 }

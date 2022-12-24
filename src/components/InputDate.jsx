@@ -11,9 +11,10 @@ export default function InputDate({
   onChange,
   inputClass,
   labelClass,
+  groupClass,
 }) {
   return (
-    <>
+    <div className={groupClass}>
       <label className={labelClass} htmlFor={name}>
         {label}
       </label>
@@ -32,6 +33,6 @@ export default function InputDate({
         className={inputClass}
         locale='ru'
       />
-    </>
+    </div>
   );
 }

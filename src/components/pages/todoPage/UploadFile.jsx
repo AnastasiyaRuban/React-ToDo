@@ -17,7 +17,7 @@ export default function UploadFile({ onAdd, files, styles }) {
   };
 
   return (
-    <>
+    <div className={styles['form__upload-group']}>
       <span className={styles['form__button-upload']} onClick={handleClick}>
         <AddCircleOutlineIcon
           className={styles['add-icon']}
@@ -41,6 +41,6 @@ export default function UploadFile({ onAdd, files, styles }) {
           ))}
         </ul>
       )}
-    </>
+    </div>
   );
 }
